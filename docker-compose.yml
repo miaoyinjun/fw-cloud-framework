@@ -1,9 +1,7 @@
 version: '3'
 services:
   eureka-server:
-    build:
-      context: ./
-      dockerfile: Dockerfile-eureka
+    build: fw-cloud-system/fw-cloud-system-eureka
     restart: always
     ports:
       - 1001:1001
@@ -11,9 +9,7 @@ services:
   config-server:
     links:
       - eureka-server:eureka
-    build:
-      context: ./
-      dockerfile: Dockerfile-config
+    build: fw-cloud-system/fw-cloud-system-config
     restart: always
     ports:
       - 1002:1002
@@ -21,9 +17,7 @@ services:
   auth-server:
     links:
       - eureka-server:eureka
-    build:
-      context: ./
-      dockerfile: Dockerfile-auth
+    build: fw-cloud-system/fw-cloud-system-auth
     restart: always
     ports:
       - 1004:1004
@@ -34,9 +28,7 @@ services:
   admin-server:
     links:
       - eureka-server:eureka
-    build:
-      context: ./
-      dockerfile: Dockerfile-admin
+    build: fw-cloud-business/fw-cloud-business-admin
     restart: always
     ports:
       - 2002:2002
@@ -47,9 +39,7 @@ services:
   pay-server:
     links:
       - eureka-server:eureka
-    build:
-      context: ./
-      dockerfile: Dockerfile-pay
+    build: fw-cloud-business/fw-cloud-business-pay
     restart: always
     ports:
       - 2003:2003
@@ -61,9 +51,7 @@ services:
   wechat-server:
     links:
       - eureka-server:eureka
-    build:
-      context: ./
-      dockerfile: Dockerfile-wechat
+    build: fw-cloud-business/fw-cloud-business-wechat
     restart: always
     ports:
       - 2004:2004
@@ -78,9 +66,7 @@ services:
       - admin-server:admin
       - pay-server:pay
       - wechat-server:wechat
-    build:
-      context: ./
-      dockerfile: Dockerfile-gateway
+    build: fw-cloud-system/fw-cloud-system-gateway
     restart: always
     ports:
       - 1003:1003

@@ -1,7 +1,7 @@
 FROM java:8
 MAINTAINER fw-cloud-framework <liuweijw.github@foxmail.com>
 
-ADD ../../fw-cloud-system/fw-cloud-system-eureka/target/fw-cloud-system-eureka.jar /app/
+ADD ./target/fw-cloud-system-eureka.jar /app/
 
 CMD ["java", "-Xmx200m", "-jar", "/app/fw-cloud-system-eureka.jar"]
 

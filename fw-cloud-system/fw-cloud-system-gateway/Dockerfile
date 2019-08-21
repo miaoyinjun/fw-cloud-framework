@@ -1,7 +1,7 @@
 FROM java:8
 MAINTAINER fw-cloud-framework <liuweijw.github@foxmail.com>
 
-ADD ../../fw-cloud-system/fw-cloud-system-gateway/target/fw-cloud-system-gateway.jar /app/
+ADD ./target/fw-cloud-system-gateway.jar /app/
 
 CMD ["java", "-Xmx300m", "-jar", "/app/fw-cloud-system-gateway.jar"]
 

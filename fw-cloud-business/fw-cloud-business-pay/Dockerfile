@@ -1,7 +1,7 @@
 FROM java:8
 MAINTAINER fw-cloud-framework <liuweijw.github@foxmail.com>
 
-ADD ../../fw-cloud-business/fw-cloud-business-pay/target/fw-cloud-business-pay.jar /app/
+ADD ./target/fw-cloud-business-pay.jar /app/
 
 CMD ["java", "-Xmx300m", "-jar", "/app/fw-cloud-business-pay.jar"]
 

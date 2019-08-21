@@ -1,7 +1,7 @@
 FROM java:8
 MAINTAINER fw-cloud-framework <liuweijw.github@foxmail.com>
 
-ADD ../../fw-cloud-business/fw-cloud-business-wechat/target/fw-cloud-business-wechat.jar /app/
+ADD ./target/fw-cloud-business-wechat.jar /app/
 
 CMD ["java", "-Xmx300m", "-jar", "/app/fw-cloud-business-wechat.jar"]
 
